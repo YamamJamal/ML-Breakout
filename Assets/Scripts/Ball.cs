@@ -52,9 +52,7 @@ public class Ball : MonoBehaviour
             livesImage[lives].SetActive(false);
             gameObject.SetActive(false);
             death_flag = true;
-        
         }
-
     }
 
     private void OnCollisionEnter2D(Collision2D other) 
@@ -69,13 +67,10 @@ public class Ball : MonoBehaviour
             if (brickCount <= 0)
             {
                 youWinPanel.SetActive(true);
-                Time.timeScale = 0;
-                 
+                Time.timeScale = 0;  
             }  
         }
     }
-
-    
 
     // Shoots the ball up from its current position, puts the ball into play
     public void Shoot()
@@ -97,7 +92,6 @@ public class Ball : MonoBehaviour
     {
         gameObject.SetActive(false);
         death_flag = true;
-
     }
 
     // Returns wither of not the ball is "alive" or currently in play
@@ -117,9 +111,6 @@ public class Ball : MonoBehaviour
         Debug.Log("Game Over");
         gameOverPanel.SetActive(true);
         Time.timeScale = 0;
-        Destroy(gameObject);
-        
+        Destroy(gameObject); 
     }
-
-
 }

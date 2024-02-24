@@ -14,17 +14,10 @@ public class Paddle_Agent : Agent
     Ball ball_script;
     Rigidbody2D ball_rb;
     Transform ball_transform;
-
     float ball_bounce_angle; // angle the ball flys in after hitting the paddle
     Collider2D paddle_collider;
     Vector3 ball_collide_position = Vector3.zero;
     Vector3 brick_position_hit_by_raycast = Vector3.zero;
-
-
-
-
-
-
     //for calculating bounce angle w/0 unity physics
     public float maxBounceAngle = 75f;
 
@@ -40,19 +33,7 @@ public class Paddle_Agent : Agent
 
     // Update is called once per frame
     void Update()
-    {
-
-
-    }
-
-  
-
-
-    
-
-
-
-    
+    {}
 
     public override void OnEpisodeBegin()
     {}
@@ -129,11 +110,9 @@ public class Paddle_Agent : Agent
         { // If the ball goes off screen, give a penalty and reset the ball
             
             SetReward(-1.0f);
-            ball_script.Kill();
+            // ball_script.Kill();
             EndEpisode();
         }
-
-
     }
 
     private void OnCollisionEnter2D(Collision2D other) 
@@ -184,6 +163,4 @@ public class Paddle_Agent : Agent
         if (Input.GetButton("Shoot")) discreteActionsOut[0] = 1;
         else discreteActionsOut[0] = 0;
     }
-
-
 }
