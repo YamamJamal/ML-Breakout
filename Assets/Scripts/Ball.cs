@@ -112,6 +112,7 @@ public class Ball : MonoBehaviour
         Debug.Log("Game Over");
         gameOverPanel.SetActive(true);
         Time.timeScale = 0;
-        Destroy(gameObject); 
+        //Destroy(gameObject); 
+        gameObject.SetActive(false);
     }
 }

@@ -291,9 +291,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08e9c5bae3846a21a854c5d54b84de93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Paddle: {fileID: 0}
   paddle_transform: {fileID: 2094820051731360348}
   force: 500
   brickManager: {fileID: 4655291517413865957}
+  youWinPanel: {fileID: 0}
+  livesImage: []
+  gameOverPanel: {fileID: 0}
   scoreText: {fileID: 8834251532563282392}
 --- !u!1 &2144704845667149259
 GameObject:
@@ -976,9 +980,9 @@ Transform:
   - {fileID: 6881296425434351294}
   - {fileID: 5202379163193779855}
   - {fileID: 2094820051731360348}
+  - {fileID: 1043954339294035372}
   - {fileID: 3491621822114847850}
   - {fileID: 6477360708844492715}
-  - {fileID: 1043954339294035372}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8779147839970433039
