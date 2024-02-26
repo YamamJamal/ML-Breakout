@@ -40,10 +40,7 @@ public class Ball : MonoBehaviour
 
 // Update is called once per frame
     void Update()
-    {
-        if (lives<=0){
-            GameOver();
-        }
+    {        
         if (transform.position.y < -5)
         {
             rb.velocity = Vector2.zero; // Reset velocity to zero
@@ -52,6 +49,10 @@ public class Ball : MonoBehaviour
             livesImage[lives].SetActive(false);
             gameObject.SetActive(false);
             death_flag = true;
+        }
+        if (lives <= 0)
+        {
+            GameOver();
         }
     }
 
