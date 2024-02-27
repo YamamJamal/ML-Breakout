@@ -34,7 +34,7 @@ public class Ball : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         gameObject.SetActive(false);
         brickCount = FindObjectOfType<LevelGenerator>().transform.childCount;
-    
+        Time.timeScale = 0; // pause game on start
     }
 
 

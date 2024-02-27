@@ -14,6 +14,11 @@ public class MainMenuScript : MonoBehaviour
         SceneManager.LoadScene("Singleplayer");
     }
 
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void ExitGame()
     {
 #if UNITY_EDITOR

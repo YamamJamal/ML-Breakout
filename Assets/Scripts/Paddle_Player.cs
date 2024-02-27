@@ -26,7 +26,11 @@ public class Paddle_Player : MonoBehaviour
         Vector3 moveTo = new Vector3(transform.localPosition.x + velocity.x * speed * Time.deltaTime, transform.localPosition.y, 0);
         if (moveTo.x > -8.7f && moveTo.x < 8.7f) transform.localPosition = moveTo; // Bounds
 
-        if (ball_script.IsDead() && Input.GetButton("Shoot")) ball_script.Shoot(); // Shoot input - only when ball is "dead"
+        if (ball_script.IsDead() && Input.GetButton("Shoot")) 
+        {
+            ball_script.Shoot(); // Shoot input - only when ball is "dead"
+            if (Time.timeScale == 0) Time.timeScale = 1; // resume time, allows the player to start at the same time as the AI
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other) 
