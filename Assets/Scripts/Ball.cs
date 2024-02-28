@@ -56,6 +56,7 @@ public class Ball : MonoBehaviour
         }
     }
 
+    // Handles ball collision with paddle agent
     private void OnCollisionEnter2D(Collision2D other) 
     {
         if(other.gameObject.CompareTag("Brick"))
@@ -73,7 +74,7 @@ public class Ball : MonoBehaviour
         }
     }
 
-    // Shoots the ball up from its current position, puts the ball into play
+    // Shoots the ball down from a random x position, puts the ball into play
     public void Shoot()
     {
         gameObject.SetActive(true);
@@ -107,12 +108,12 @@ public class Ball : MonoBehaviour
         return score;
     }
 
+    // Handles end of game panel
     void GameOver()
     {
         Debug.Log("Game Over");
         gameOverPanel.SetActive(true);
         Time.timeScale = 0;
-        //Destroy(gameObject); 
         gameObject.SetActive(false);
     }
 }

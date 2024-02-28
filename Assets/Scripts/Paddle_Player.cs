@@ -11,6 +11,8 @@ public class Paddle_Player : MonoBehaviour
     Ball ball_script;
     Collider2D paddle_collider;
     public float maxBounceAngle = 75f;
+    public float ballVelocityReset = 10f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +35,7 @@ public class Paddle_Player : MonoBehaviour
         }
     }
 
+    // Handles physics interaction of ball after it hits paddle
     private void OnCollisionEnter2D(Collision2D other) 
     {
         if (other.gameObject.name == "Ball" && !ball_script.IsDead())
@@ -48,7 +51,7 @@ public class Paddle_Player : MonoBehaviour
             float newBounceAngle = Mathf.Clamp(currentAngle + bounceAngle, -maxBounceAngle, maxBounceAngle);
 
             Quaternion rotation = Quaternion.AngleAxis(newBounceAngle, Vector3.forward);
-            ball.GetComponent<Rigidbody2D>().velocity = rotation * Vector2.up * 10f; //10f feels pretty close here for a velocity
+            ball.GetComponent<Rigidbody2D>().velocity = rotation * Vector2.up * ballVelocityReset;
         }
     }
 }

@@ -18,7 +18,7 @@ public class Paddle_Agent : Agent
     Collider2D paddle_collider;
     Vector3 ball_collide_position = Vector3.zero;
     Vector3 brick_position_hit_by_raycast = Vector3.zero;
-    //for calculating bounce angle w/0 unity physics
+    // For calculating bounce angle with no unity physics
     public float maxBounceAngle = 75f;
 
     // Start is called before the first frame update
@@ -94,7 +94,7 @@ public class Paddle_Agent : Agent
         int shoot_control = 0;
         shoot_control = actionBuffers.DiscreteActions[0];
         if (shoot_control > 0 && ball_script.IsDead())
-        { // if the ball is "dead" (attached to the paddle), allow the ball to be "shot"
+        { // if the ball is dead(deactivated), allow the ball to be "shot"
             AddReward(0.005f); // encourge the agent to actually shoot the ball
             ball_script.Shoot();
         }
